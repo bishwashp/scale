@@ -245,7 +245,7 @@ Take references from Apple Reminder App`;
         <div className="container mx-auto max-w-6xl flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
             <h3 className="text-2xl font-black text-[#A3E635]">S.C.A.L.E.</h3>
-            <p className="font-mono text-sm text-gray-400">Est. 2024 // Neobrutalist Edition</p>
+            <p className="font-mono text-sm text-gray-400">Est. 2025 To Infinity // Neobrutalist Edition</p>
           </div>
           <div className="text-center md:text-right">
             <p className="font-bold uppercase">Built with React + Tailwind + Gemini</p>
