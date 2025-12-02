@@ -97,8 +97,8 @@ Take references from Apple Reminder App`;
         </div>
         <div className="hidden md:flex gap-4">
           <button onClick={() => scrollToSection('scale')} className="hover:text-[#A3E635] font-mono font-bold uppercase transition-colors">Principles</button>
-          <button onClick={() => scrollToSection('golden')} className="hover:text-[#A3E635] font-mono font-bold uppercase transition-colors">The Template</button>
           <button onClick={() => scrollToSection('workshop')} className="hover:text-[#A3E635] font-mono font-bold uppercase transition-colors">Workshop</button>
+          <button onClick={() => scrollToSection('golden')} className="hover:text-[#A3E635] font-mono font-bold uppercase transition-colors">The Template</button>
         </div>
       </nav>
 
@@ -144,10 +144,23 @@ Take references from Apple Reminder App`;
           </div>
         </section>
 
+        {/* WORKSHOP SECTION */}
+        <section id="workshop" className="mb-24">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-12 bg-black text-white flex items-center justify-center font-black text-2xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">02</div>
+            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">The Workshop</h2>
+          </div>
+          <p className="text-xl font-mono mb-8">
+            Enter a basic idea, and our AI architect will rewrite it using the S.C.A.L.E. framework with added safety protocols.
+          </p>
+
+          <Workshop />
+        </section>
+
         {/* GOLDEN PROMPT SECTION */}
         <section id="golden" className="mb-24">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-12 h-12 bg-black text-white flex items-center justify-center font-black text-2xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">02</div>
+            <div className="w-12 h-12 bg-black text-white flex items-center justify-center font-black text-2xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">03</div>
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">The Template</h2>
           </div>
 
@@ -223,19 +236,6 @@ Take references from Apple Reminder App`;
               </div>
             </div>
           </div>
-        </section>
-
-        {/* WORKSHOP SECTION */}
-        <section id="workshop" className="mb-24">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 bg-black text-white flex items-center justify-center font-black text-2xl border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">03</div>
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">The Workshop</h2>
-          </div>
-          <p className="text-xl font-mono mb-8">
-            Enter a basic idea, and our AI architect will rewrite it using the S.C.A.L.E. framework with added safety protocols.
-          </p>
-
-          <Workshop />
         </section>
 
       </main>
