@@ -1,11 +1,7 @@
-import { GoogleGenAI } from "@google/genai";
 import { PromptFeedback } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export const improvePromptWithScale = async (userPrompt: string): Promise<PromptFeedback> => {
-  const model = "gemini-2.5-flash";
-  
+
   const systemPrompt = `
     You are an expert Prompt Engineer using the S.C.A.L.E. Framework.
     Your task is to take a basic user idea and rewrite it into a "Golden Prompt".
@@ -33,9 +29,13 @@ export const improvePromptWithScale = async (userPrompt: string): Promise<Prompt
   `;
 
   try {
-    const response = await ai.models.generateContent({
-      model: model,
-      contents: `
+    const response = await fetch('/api/generate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        prompt: `
         User Idea: "${userPrompt}"
         
         Rewrite this using S.C.A.L.E.
@@ -47,23 +47,24 @@ export const improvePromptWithScale = async (userPrompt: string): Promise<Prompt
         [E] Example Code: (A tiny snippet relevant to the stack)
         [+] Safety & Review: (Add Safe-Fail rule and Review Loop)
       `,
-      config: {
-        systemInstruction: systemPrompt,
-        responseMimeType: "application/json"
-      }
+        systemPrompt: systemPrompt
+      })
     });
 
-    const text = response.text;
-    if (!text) throw new Error("No response from AI");
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || response.statusText);
+    }
 
-    return JSON.parse(text) as PromptFeedback;
+    const data = await response.json();
+    return data as PromptFeedback;
 
   } catch (error) {
     console.error("Error improving prompt:", error);
     return {
       original: userPrompt,
       improved: "Error contacting the Prompt Architect. Please try again.",
-      analysis: "System Failure."
+      analysis: "System Failure: " + (error instanceof Error ? error.message : String(error))
     };
   }
 };
