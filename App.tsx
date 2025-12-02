@@ -10,8 +10,8 @@ const PRINCIPLES: ScalePrinciple[] = [
     letter: 'S',
     title: 'Specific Tools',
     description: 'Don\'t let the AI guess. Tell it exactly which tools, libraries, and versions to use.',
-    do: 'Use React 18, Tailwind CSS, and Three.js standard material.',
-    dont: 'Use a modern frontend stack with a 3D library.',
+    do: 'Use React 18, Tailwind CSS and Neobrutalism Components (for React/Tailwind) or NeoBrutalismCSS (CSS-only).',
+    dont: 'Use frontend libraries and frameworks.',
     color: 'bg-[#A3E635]' // Lime
   },
   {
