@@ -60,12 +60,12 @@ export default function App() {
 
   const copyGoldenPrompt = () => {
     const promptText = `Role: Senior Frontend Developer.
-Task: Build a "Voxel Art Toy" app.
+Task: Build a "Reminder" app.
 
-[S] TACK:
-- React 18 (Functional), Tailwind CSS, Three.js.
+[S] PECIFICS:
+- React 18 (Functional), Tailwind CSS.
 
-[C] ONSTRAINTS:
+[C] LARITY:
 - No complex physics engines.
 - State must be a simple array of objects.
 - If WebGL crashes, show a generic error message (Safe-Fail).
@@ -75,12 +75,12 @@ Task: Build a "Voxel Art Toy" app.
 - Colors: Lime green, Black, White.
 
 [L] OGIC:
-1. User clicks grid -> Add cube at location.
-2. User right-clicks -> Remove cube.
+1. User clicks Add -> Add reminder.
+2. User clicks Delete -> Add reminder.
 3. Review Step: After generating code, check for memory leaks.
 
 [E] XAMPLE:
-const Cube = ({ pos }) => <mesh position={pos} />`;
+Take references from Apple Reminder App`;
 
     navigator.clipboard.writeText(promptText);
     setCopied(true);
@@ -196,13 +196,13 @@ const Cube = ({ pos }) => <mesh position={pos} />`;
                   <pre className="whitespace-pre-wrap">
                     <span className="text-gray-400"># 1. Role & Task</span>
                     <span className="text-pink-400 font-bold">Role:</span> Senior Frontend Developer.
-                    <span className="text-pink-400 font-bold">Task:</span> Build a "Voxel Art Toy".
+                    <span className="text-pink-400 font-bold">Task:</span> Build a "Reminder" app.
 
                     <span className="text-gray-400"># 2. The S.C.A.L.E. Specs</span>
-                    <span className="text-[#A3E635] font-bold">[S] TACK:</span>
+                    <span className="text-[#A3E635] font-bold">[S] PECIFICS:</span>
                     - React 18 (Functional), Tailwind CSS, Three.js.
 
-                    <span className="text-blue-400 font-bold">[C] ONSTRAINTS:</span>
+                    <span className="text-blue-400 font-bold">[C] LARITY:</span>
                     - No complex physics engines.
                     - State must be a simple array of objects.
                     - <span className="text-red-300 bg-red-900 px-1">SAFE-FAIL:</span> If WebGL crashes, show a generic error message.
@@ -212,12 +212,12 @@ const Cube = ({ pos }) => <mesh position={pos} />`;
                     - Colors: Lime green, Black, White.
 
                     <span className="text-yellow-400 font-bold">[L] OGIC:</span>
-                    1. User clicks grid -&gt; Add cube at location.
-                    2. User right-clicks -&gt; Remove cube.
+                    1. User clicks Add -&gt; Add reminder.
+                    2. User clicks Delete -&gt; Add reminder.
                     3. <span className="text-purple-300 bg-purple-900 px-1">REVIEW LOOP:</span> After generating code, check for memory leaks.
 
                     <span className="text-purple-400 font-bold">[E] XAMPLE:</span>
-                    const Cube = (&#123; pos &#125;) =&gt; &lt;mesh position=&#123;pos&#125; /&gt;
+                    Take references from Apple Reminder App
                   </pre>
                 </div>
               </div>
